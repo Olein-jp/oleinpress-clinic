@@ -44,7 +44,7 @@ if ( ! function_exists( 'opclinic_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'opclinic' ),
+			'global-menu' => esc_html__( 'Global Menu', 'opclinic' ),
 		) );
 
 		/*
@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'opclinic_widgets_init' );
  * Enqueue scripts and styles.
  */
 function opclinic_scripts() {
-	wp_enqueue_style( 'opclinic-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'opclinic-style', get_template_directory_uri() . '/assets/css/style.min.css' );
 
 	wp_enqueue_script( 'opclinic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
