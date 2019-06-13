@@ -21,9 +21,26 @@
   }
 }
 
+.c-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: $accent-color_primary;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-size: 12px;
+  &_radius {
+    border-radius: 5px;
+  }
+}
+
 
 /* project
 ------------------------------*/
+.p-site-header {
+  border-top: 5px solid $accent-color_primary;
+}
 .p-site-title {
   margin: 15px 0;
   .custom-logo {
@@ -85,6 +102,7 @@
         & > a {
           background: rgba( 0,0,0, .03 );
           padding-left: 30px;
+          border-left: 3px solid $accent-color_primary;
         }
       }
       & > .page_item_has_children {
@@ -93,17 +111,81 @@
             & > a {
               background: rgba( 0,0,0, .06 );
               padding-left: 60px;
+              border-left: 6px solid $accent-color_primary;
             }
           }
         }
       }
     }
-
   }
   &.is-active {
   }
   @include mq-up(lg) {
     display: block;
+  }
+}
+
+.p-slider {
+  &__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &-body {
+    .slick-track {
+      height: 220px;
+    }
+    .slick-prev {
+      left: 20px;
+      z-index: 2000;
+    }
+    .slick-next {
+      right: 20px;
+      z-index: 2000;
+    }
+  }
+  &-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    &__image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate( -50%, -50% );
+    }
+    &__text-box {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      padding: 15px;
+      background: rgba( 255,255,255, .5 );
+    }
+    &__title {
+      margin: 0 0 .5em;
+      padding: 0;
+      text-align: center;
+      font-size: 1.6rem;
+      font-size: 16px;
+    }
+    &__desc {
+      display: none;
+      margin: 0 auto;
+      padding: 0;
+      width: 80%;
+      font-size: 1.2rem;
+      font-size: 12px;
+    }
+    &__button-area {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    &__button {
+
+    }
   }
 }
 

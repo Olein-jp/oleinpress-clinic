@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'opclinic' ); ?></a>
 
-	<header id="masthead" class="l-site-header">
+	<header id="masthead" class="l-site-header p-site-header">
 		<div class="c-container">
 			<div class="p-site-branding">
 				<?php
@@ -68,5 +68,31 @@
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
+	<div class="p-slider">
+		<div class="c-container p-slider__inner">
+			<div class="p-slider-body">
+				<div class="p-slider-item">
+					<img class="p-slider-item__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-sample-01.jpg" alt="">
+					<div class="p-slider-item__text-box">
+						<h2 class="p-slider-item__title">タイトルが設定できます</h2>
+						<p class="p-slider-item__desc">テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。</p>
+						<div class="p-slider-item__button-area">
+							<a href="#" class="c-button c-button_radius p-slider-item__button">ボタンテキスト</a>
+						</div>
+					</div>
+				</div>
+				<div class="p-slider-item">
+					<img class="p-slider-item__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-sample-02.jpg" alt="">
+					<div class="p-slider-item__text-box">
+						<h2 class="p-slider-item__title">タイトルが設定できます。長くなっても大丈夫かな？</h2>
+						<p class="p-slider-item__desc">テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。テキストを入れることができます。</p>
+						<div class="p-slider-item__button-area">
+							<a href="#" class="c-button c-button_radius p-slider-item__button">ボタンテキストが長くなるとこう</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="content" class="site-content">

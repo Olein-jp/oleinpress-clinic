@@ -7,4 +7,13 @@ jQuery(function($){
     if (window.matchMedia( 'screen and (min-width: 992px)' ).matches) {
         $('.p-header-menu').superfish();
     }
+
+    $('.p-slider-body').slick({
+        dots: true,
+        slideToShow: 1,
+        speed: 3000,
+        fade: true,
+        autoplay: true,
+        centerPadding: '0px',
+    });
 });
