@@ -24,30 +24,49 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'opclinic' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<header id="masthead" class="l-site-header">
+		<div class="c-container">
+			<div class="p-site-branding">
 				<?php
-			else :
+				if ( get_custom_logo() ) {
+					if ( is_front_page() && is_home() ) :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+				<h1 class="p-site-title"><?php the_custom_logo(); ?></h1>
+				<?php else: ?>
+				<p class="p-site-title"><?php the_custom_logo(); ?></p>
+				<? endif; ?>
+				<?php } else {
+					if ( ! get_custom_logo() && is_front_page() && is_home() ) :
+						?>
+						<h1 class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+												  rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+					else :
+						?>
+						<p class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+												 rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif;
+				} ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'opclinic' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'global-menu',
-				'menu_id'        => 'global-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-navigation">
+				<button class="p-hamburger-button hamburger hamburger--collapse" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'global-menu',
+					'menu_id'        => 'global-menu',
+					'menu_class'     => 'p-global-menu is-active',
+					'container'      => '',
+					'depth'          => '3',
+				) );
+				?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
