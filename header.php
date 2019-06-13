@@ -95,4 +95,4 @@
 		</div>
 	</div>
 
-	<div id="content" class="site-content">
+	<div id="content" class="p-site-content c-container">
