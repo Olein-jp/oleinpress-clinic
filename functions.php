@@ -122,6 +122,8 @@ add_action( 'widgets_init', 'opclinic_widgets_init' );
 function opclinic_scripts() {
 	wp_enqueue_style( 'opclinic-style', get_template_directory_uri() . '/assets/css/style.min.css' );
 
+	wp_enqueue_style( 'opclinic-fontawesome', get_template_directory_uri() . '/assets/packages/fontawesome/css/all.min.css' );
+
 	wp_enqueue_script( 'opclinic-script', get_template_directory_uri() . '/assets/js/script.min.js', array( 'jquery' ), '20190612', true );
 
 	wp_enqueue_script( 'opclinic-superfish', get_template_directory_uri() . '/assets/packages/superfish/js/superfish.min.js', array( 'jquery' ), '1.7.10', true );

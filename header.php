@@ -25,48 +25,50 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'opclinic' ); ?></a>
 
 	<header id="masthead" class="l-site-header p-site-header">
-		<div class="c-container">
 			<div class="p-site-branding">
-				<?php
-				if ( get_custom_logo() ) {
-					if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="p-site-title"><?php the_custom_logo(); ?></h1>
-				<?php else: ?>
-				<p class="p-site-title"><?php the_custom_logo(); ?></p>
-				<? endif; ?>
-				<?php } else {
-					if ( ! get_custom_logo() && is_front_page() && is_home() ) :
-						?>
-						<h1 class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-												  rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<div class="c-container">
 					<?php
-					else :
-						?>
-						<p class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-												 rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
-				} ?>
+					if ( get_custom_logo() ) {
+						if ( is_front_page() && is_home() ) :
+							?>
+							<h1 class="p-site-title"><?php the_custom_logo(); ?></h1>
+						<?php else: ?>
+							<p class="p-site-title"><?php the_custom_logo(); ?></p>
+						<? endif; ?>
+					<?php } else {
+						if ( ! get_custom_logo() && is_front_page() && is_home() ) :
+							?>
+							<h1 class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+														rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php
+						else :
+							?>
+							<p class="p-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+													   rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+						endif;
+					} ?>
+				</div>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
+			<nav id="site-navigation" class="p-main-navigation">
 				<button class="p-hamburger-button hamburger hamburger--collapse" type="button">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
 				</button>
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'global-menu',
-					'menu_id'        => 'global-menu',
-					'menu_class'     => 'p-global-menu is-active',
-					'container'      => '',
-					'depth'          => '3',
-				) );
-				?>
+				<div class="c-container">
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'global-menu',
+						'menu_id'        => 'global-menu',
+						'menu_class'     => 'p-global-menu is-active',
+						'container'      => '',
+						'depth'          => '3',
+					) );
+					?>
+				</div>
 			</nav><!-- #site-navigation -->
-		</div>
 	</header><!-- #masthead -->
 	<div class="p-slider">
 		<div class="c-container p-slider__inner">
@@ -95,4 +97,4 @@
 		</div>
 	</div>
 
-	<div id="content" class="p-site-content c-container">
+	<div id="content" class="p-site-content">

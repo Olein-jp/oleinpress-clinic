@@ -5,7 +5,7 @@ jQuery(function($){
     });
 
     if (window.matchMedia( 'screen and (min-width: 992px)' ).matches) {
-        $('.p-header-menu').superfish();
+        $('.p-global-menu').superfish();
     }
 
     $('.p-slider-body').slick({
